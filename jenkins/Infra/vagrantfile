@@ -1,0 +1,59 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "generic/centos8"
+    #config.disksize.size = '100GB'
+
+    config.vm.provider :virtualbox do |vb|
+        vb.name = "Jenkins"
+        vb.cpus = 1
+        vb.memory = 1028  
+    end
+
+    
+
+    config.vm.hostname = "Jenkins"
+    config.vm.network "private_network", ip: "192.168.56.5" 
+
+    config.vm.provision "shell", inline: <<-SHELL
+    
+        sudo hostnamectl set-hostname jenkins
+
+
+
+        sudo yum update -y 
+
+     
+    
+        sudo nmcli connection modify "System\ eth1" ipv4.ignore-auto-dns yes
+        sudo nmcli connection modify "System\ eth1" ipv4.dns "192.168.56.5"    
+
+
+
+        sudo yum install java-1.8.0-openjdk-devel -y 
+        sudo yum install wget -y 
+        sudo wget –O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+        sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+        sudo touch /etc/yum.repos.d/jenkins.repo
+        sudo chmod +777 /etc/yum.repos.d/jenkins.repo
+        sudo printf "[jenkins]\nname=Jenkins-stable\nbaseurl=http://pkg.jenkins.io/redhat\ngpgcheck=1" >> /etc/yum.repos.d/jenkins.repo  sudo rpm ––import https://pkg.jenkins.io/redhat/jenkins.io.key
+        sudo yum install jenkins -y 
+        sudo systemctl start jenkins
+        sudo systemctl enable jenkins
+        sudo yum install firewalld -y 
+        sudo systemctl start firewalld
+        sudo systemctl enable firewalld 
+        sudo firewall-cmd --zone=public --permanent --add-port=8080/tcp
+        sudo firewall-cmd --reload
+
+        echo "Jenkins Password : "
+        sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+
+    SHELL
+
+
+
+
+  end
+
+

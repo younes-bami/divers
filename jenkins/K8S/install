@@ -1,0 +1,4 @@
+#/bin/bash 
+kubectl apply -f jenkins-volume.yaml
+chart=jenkinsci/jenkins
+helm install jenkins -n jenkins -f jenkins-values.yaml $chart

@@ -1,0 +1,193 @@
+nodes:
+- address: 192.168.56.4  port: ""
+  internal_address: ""
+  role:
+  - controlplane
+  - worker
+  - etcd
+  hostname_override: ""
+  user: vagrant
+  docker_socket: ""
+  ssh_key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEowIBAAKCAQEAyN3AqVo9qTVZT6Wu5knKvKWteLp9w0O20innMlIz1G7rxqQY
+    6iAzysbuwFJFcfFtBQX8wfOuNUiswTUAsQsNjun5Gfa4HaG1hNYPWKDVg96HkydQ
+    3ruD9BSR3gLo+vmX4TQWHuwE66kcQYOX6Dg+3276fz3/WMipMxNne0+gHOcn+c7V
+    2ukIcfOiVDTpxcLqExPR4HYZ0zED1DbzRdt1Z3EJ2Q3ck197ou6VuTWP2l7IP8vl
+    cYcaFixQt5qsZuuHOM/V8+B41BG4ygjU1EUcH4ZGgiqEyz80tXhx9iI9r1PAiIlo
+    BYghq7WSZTwe0/Haxwj4DnSRY/H4omcdt/KvCQIDAQABAoIBAFsBxbG1Niy9BBsH
+    CUhDdLymIAOME0DuJB3yaFKvVdZQ7zhPzw38yxp7qV6vp9EpPmjBPrStcGep5sOe
+    /RI53Mm8jmVKGD8sri5iQg+4xyR5JVnxvT09HlrvGuvIy8AyZ7LcQ419B/mx5CB2
+    u9O18B6RjKMr9s5GFAsVJpSDDhspfr/DKb41U1uLGaHai4KI6SwAgII0SFeLOFTl
+    90EA80vaL9K4DPZrB6ynrOzbF7djYDruf+MQoY78Dpsfe5Fpt8jSXc56S7cv9Aa9
+    D7GvOIVsFw2hbiL/BYrk1EQ/Qcx9VjNjJ8gDhlSUNP7zCsQ1XAyzX6iPg1o5eoCM
+    OzjBlfUCgYEA5Qli1BSzmSlxhQ+UawZOG8yaqluBul/388fVCiZIHfB+Fjf65/Cn
+    deuwdai8GdCzvUXtlCLBGTabKfr+gyYSaojhDa6nOLo7nYilBAMwJA1h6cjd6y2G
+    ihYkDn/I7+SQdH59zVAeUdaMFuJBIcRp0Q2kDHrD93oh8yerospWr+MCgYEA4INg
+    jZqpH18Br6DKNjJeksLrb/gHQgsfD6aYAEFYLYxek9GQEw6b7rdX1p8Ow6u325kR
+    YEUWQ8epqEYu+MQ8+4Yo9Ia2TfFncmeiZ4y2svjd8iEXC4DUQmxFAZtfuf6sEIkd
+    jY8uxLf0yFQR96lSW6Dljzb2pvOOcIZFMcHQQSMCgYA29W+fkHAgOo+g7EIjBFpN
+    1WTvqBGTFWA8QSFf1BvOA11eG4S7j0W/yBSJxzmLwEbBDjyaJVTMpgvJoQ7djY8x
+    vTKzw8sgk5+mh5mBQvqUTBnIrYiC3GPCUtnIGOWwmtoG+itZzvXXkXIAM76JScZS
+    gcFxtSu9ALOQ014eLAttHQKBgQDbS7gt2JnFSLmO4RFi6sQxui7aCXydZ9uJIAJs
+    jWch5nAjFpkR5D0vaOplequjOMG3v8WXMSRURFxVP2h2GMgwLpUmc8byTw/qUYvy
+    dSGnoyq3bNbjp4ys7LBip29Tb4yGAkhZkzftcnmoi2WZcUw+r+RKhTdbT58cDirc
+    NSHD3QKBgGjvWoHnCMlpwp4BSSaJg5PAXasOup9uNkXCuzIOVK1i/WXYLnNMpDM4
+    s1PYliEPAofLg0hAa1CMMpjU3LNTfkbPtAYO7W3fr9ou5e/LhUzaXnfArFovLTF4
+    WORJkp5SQ7EEjiiQxgf7OZ+MEA7i1i+zhaMgiOcXQKNrz4+LLj0b
+    -----END RSA PRIVATE KEY-----
+  ssh_key_path: ""
+  ssh_cert: ""
+  ssh_cert_path: ""
+  labels: {}
+  taints: []
+services:
+  etcd:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    external_urls: []
+    ca_cert: ""
+    cert: ""
+    key: ""
+    path: ""
+    uid: 0
+    gid: 0
+    snapshot: null
+    retention: ""
+    creation: ""
+    backup_config: null
+  kube-api:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    service_cluster_ip_range: ""
+    service_node_port_range: ""
+    pod_security_policy: false
+    always_pull_images: false
+    secrets_encryption_config: null
+    audit_log: null
+    admission_configuration: null
+    event_rate_limit: null
+  kube-controller:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    cluster_cidr: ""
+    service_cluster_ip_range: ""
+  scheduler:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+  kubelet:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+    cluster_domain: ""
+    infra_container_image: ""
+    cluster_dns_server: ""
+    fail_swap_on: false
+    generate_serving_certificate: false
+  kubeproxy:
+    image: ""
+    extra_args: {}
+    extra_binds: []
+    extra_env: []
+network:
+  plugin: ""
+  options: {}
+  mtu: 0
+  node_selector: {}
+  update_strategy: null
+authentication:
+  strategy: ""
+  sans: []
+  webhook: null
+addons: ""
+addons_include:
+- https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+- https://gist.githubusercontent.com/superseb/499f2caa2637c404af41cfb7e5f4a938/raw/930841ac00653fdff8beca61dab9a20bb8983782/k8s-dashboard-user.yml
+system_images:
+  etcd: ""
+  alpine: ""
+  nginx_proxy: ""
+  cert_downloader: ""
+  kubernetes_services_sidecar: ""
+  kubedns: ""
+  dnsmasq: ""
+  kubedns_sidecar: ""
+  kubedns_autoscaler: ""
+  coredns: ""
+  coredns_autoscaler: ""
+  nodelocal: ""
+  kubernetes: ""
+  flannel: ""
+  flannel_cni: ""
+  calico_node: ""
+  calico_cni: ""
+  calico_controllers: ""
+  calico_ctl: ""
+  calico_flexvol: ""
+  canal_node: ""
+  canal_cni: ""
+  canal_flannel: ""
+  canal_flexvol: ""
+  weave_node: ""
+  weave_cni: ""
+  pod_infra_container: ""
+  ingress: ""
+  ingress_backend: ""
+  metrics_server: ""
+  windows_pod_infra_container: ""
+ssh_key_path: ""
+ssh_cert_path: ""
+ssh_agent_auth: false
+authorization:
+  mode: ""
+  options: {}
+ignore_docker_version: false
+kubernetes_version: v1.18.6-rancher1-1
+private_registries: []
+ingress:
+  provider: ""
+  options: {}
+  node_selector: {}
+  extra_args: {}
+  dns_policy: ""
+  extra_envs: []
+  extra_volumes: []
+  extra_volume_mounts: []
+  update_strategy: null
+cluster_name: ""
+cloud_provider:
+  name: ""
+prefix_path: ""
+addon_job_timeout: 0
+bastion_host:
+  address: ""
+  port: ""
+  user: ""
+  ssh_key: ""
+  ssh_key_path: ""
+  ssh_cert: ""
+  ssh_cert_path: ""
+monitoring:
+  provider: ""
+  options: {}
+  node_selector: {}
+  update_strategy: null
+  replicas: null
+restore:
+  restore: false
+  snapshot_name: ""
+dns: null
+upgrade_strategy:
+  max_unavailable_worker: ""
+  max_unavailable_controlplane: ""
+  drain: false
+  node_drain_input: null

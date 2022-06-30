@@ -1,0 +1,35 @@
+Vagrant.configure("2") do |config|
+    config.vm.box = "centos/8"
+    config.vm.provider :virtualbox do |vb|
+        vb.name = "rancher"
+        vb.cpus = 2
+        vb.memory = 4096  
+    end
+    config.vm.hostname = "rancher"
+    config.vm.network "private_network", ip: "192.168.56.4" , private_nic_type: "82545EM"
+
+  end
+# sudo sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+# sudo sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+# sudo yum update -y 
+# sudo yum install -y yum-utils
+# sudo yum-config-manager \
+#   --add-repo \
+#    https://download.docker.com/linux/centos/docker-ce.repo
+# sudo yum install docker-ce-3:19.03.13-3.el8 docker-ce-cli-1:19.03.13-3.el8 containerd.io docker-compose-plugin
+# sudo systemctl restart docker 
+# sudo usermod -aG docker vagrant
+# modprobe br_netfilter
+# echo 'net.bridge.bridge-nf-call-iptables=1' | sudo tee -a /etc/sysctl.conf
+# sudo sysctl -p /etc/sysctl.conf
+# sudo swapoff -a 
+# vi /etc/fstab
+# sudo systemctl start firewalld
+# sudo systemctl enable  firewalld
+# sudo   firewall-cmd --zone=public  --add-masquerade --permanent
+# firewall-cmd --zone=public --add-port=6443/tcp --permanent
+# sudo firewall-cmd --reload
+# vi /etc/ssh/sshd_config AllowTcpForwarding yes
+# sudo systemctl restart sshd 
+# sudo systemctl restart docker 
+

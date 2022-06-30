@@ -1,0 +1,4 @@
+#/bin/bash 
+
+helm uninstall jenkins -n jenkins 
+kubectl delete pv jenkins-pv
