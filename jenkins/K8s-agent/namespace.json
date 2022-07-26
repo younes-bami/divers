@@ -1,0 +1,60 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Namespace\",\"metadata\":{\"annotations\":{},\"creationTimestamp\":\"2022-07-13T22:34:38Z\",\"deletionTimestamp\":\"2022-07-13T22:43:33Z\",\"labels\":{\"kubernetes.io/metadata.name\":\"device-manager\",\"name\":\"device-manager\"},\"name\":\"device-manager\",\"resourceVersion\":\"71636\",\"uid\":\"76fe7452-8cce-4681-acaa-a68865c94f12\"},\"spec\":{},\"status\":{\"conditions\":[{\"lastTransitionTime\":\"2022-07-13T22:43:38Z\",\"message\":\"Discovery failed for some groups, 1 failing: unable to retrieve the complete list of server APIs: metrics.k8s.io/v1beta1: the server is currently unable to handle the request\",\"reason\":\"DiscoveryFailed\",\"status\":\"True\",\"type\":\"NamespaceDeletionDiscoveryFailure\"},{\"lastTransitionTime\":\"2022-07-13T22:43:38Z\",\"message\":\"All legacy kube types successfully parsed\",\"reason\":\"ParsedGroupVersions\",\"status\":\"False\",\"type\":\"NamespaceDeletionGroupVersionParsingFailure\"},{\"lastTransitionTime\":\"2022-07-13T22:43:38Z\",\"message\":\"All content successfully deleted, may be waiting on finalization\",\"reason\":\"ContentDeleted\",\"status\":\"False\",\"type\":\"NamespaceDeletionContentFailure\"},{\"lastTransitionTime\":\"2022-07-13T22:43:40Z\",\"message\":\"All content successfully removed\",\"reason\":\"ContentRemoved\",\"status\":\"False\",\"type\":\"NamespaceContentRemaining\"},{\"lastTransitionTime\":\"2022-07-13T22:43:38Z\",\"message\":\"All content-preserving finalizers finished\",\"reason\":\"ContentHasNoFinalizers\",\"status\":\"False\",\"type\":\"NamespaceFinalizersRemaining\"}],\"phase\":\"Terminating\"}}\n"
+        },
+        "creationTimestamp": "2022-07-13T22:34:38Z",
+        "deletionTimestamp": "2022-07-13T22:43:33Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "device-manager",
+            "name": "device-manager"
+        },
+        "name": "device-manager",
+        "resourceVersion": "109844",
+        "uid": "76fe7452-8cce-4681-acaa-a68865c94f12"
+    },
+    "spec": {
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2022-07-13T22:43:38Z",
+                "message": "Discovery failed for some groups, 1 failing: unable to retrieve the complete list of server APIs: metrics.k8s.io/v1beta1: the server is currently unable to handle the request",
+                "reason": "DiscoveryFailed",
+                "status": "True",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2022-07-13T22:43:38Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2022-07-13T22:43:38Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2022-07-13T22:43:40Z",
+                "message": "All content successfully removed",
+                "reason": "ContentRemoved",
+                "status": "False",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2022-07-13T22:43:38Z",
+                "message": "All content-preserving finalizers finished",
+                "reason": "ContentHasNoFinalizers",
+                "status": "False",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}
