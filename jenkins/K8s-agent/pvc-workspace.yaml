@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: agent-workspace
+  name: maven-workspace
   namespace: jenkins
 spec:
   storageClassName: manual      
